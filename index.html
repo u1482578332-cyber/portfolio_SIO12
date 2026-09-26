@@ -38,7 +38,7 @@
         <header class="masthead bg-primary text-white text-center">
             <div class="container d-flex align-items-center flex-column">
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
+                <img class="masthead-avatar mb-5" src="assets/img/portfolio/photo_pro.png" alt="..." />
                 <!-- Masthead Heading-->
                 <h1 class="masthead-heading text-uppercase mb-0">Niels Dagonnot</h1>
                 <!-- Icon Divider-->
@@ -93,112 +93,204 @@
                             <img class="img-fluid" src="assets/img/portfolio/cntrint.png" alt="..." />          
         </section>
         <!-- Contact Section-->
-        <section class="page-section" id="contact">
-            <div class="container">
-                <!-- Contact Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contactez moi</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Entrez votre nom</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">Nom requis</div>
-                            </div>
-                            <!-- Email address input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Adresse Email</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">Email requis</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email non valide.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Numéro de téléphone</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">Numéro de téléphone requis</div>
-                            </div>
-                            <!-- Message input-->
-                            <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">Message requis</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Message</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erreur lors de l'envoi du message</div></div>
-                            <!-- Submit Button-->
-                            <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Envoyer</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <<form id="myContactForm">
+    <!-- VOTRE CLÉ ACCÈS WEB3FORMS (Mettez votre clé reçue par mail à la place de la mienne) -->
+    <input type="hidden" name="access_key" value="nielsdagonnot@gmail.com">
+    
+    <!-- Sujet personnalisé du mail que vous allez recevoir -->
+    <input type="hidden" name="subject" value="Nouveau message de votre Portfolio">
+
+    <!-- Name input-->
+    <div class="form-floating mb-3">
+        <input class="form-control" id="name" name="Nom Complet" type="text" placeholder="Enter your name..." required />
+        <label for="name">Entrez votre nom</label>
+    </div>
+    
+    <!-- Email address input-->
+    <div class="form-floating mb-3">
+        <input class="form-control" id="email" name="Adresse Email" type="email" placeholder="name@example.com" required />
+        <label for="email">Adresse Email</label>
+    </div>
+    
+    <!-- Phone number input-->
+    <div class="form-floating mb-3">
+        <input class="form-control" id="phone" name="Telephone" type="tel" placeholder="(123) 456-7890" required />
+        <label for="phone">Numéro de téléphone</label>
+    </div>
+    
+    <!-- Message input-->
+    <div class="form-floating mb-3">
+        <textarea class="form-control" id="message" name="Message" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+        <label for="message">Message</label>
+    </div>
+
+    <!-- Submit Button (La classe disabled a été retirée) -->
+    <button class="btn btn-primary btn-xl" id="customSubmitBtn" type="submit">Envoyer</button>
+</form>
+><!-- Pop-up de confirmation (Masquée par défaut) -->
+<div id="customSuccessPopup" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 10000; align-items: center; justify-content: center;">
+    <div class="bg-dark text-white p-4 rounded text-center border border-secondary" style="max-width: 400px; width: 90%; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+        <i class="fas fa-check-circle text-success mb-3" style="font-size: 3rem;"></i>
+        <h4 class="mb-2">Message envoyé !</h4>
+        <p class="mb-0 text-muted">Merci, je vous répondrai dès que possible.</p>
+    </div>
+</div>
+
+<script>
+document.getElementById('myContactForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Empêche la page blanche et le rechargement
+    
+    const btn = document.getElementById('customSubmitBtn');
+    const popup = document.getElementById('customSuccessPopup');
+    
+    btn.disabled = true;
+    btn.innerText = "Envoi en cours...";
+
+    const formData = new FormData(this);
+
+    // Envoi des données en arrière-plan à Web3Forms
+    fetch('https://web3forms.com', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // 1. On affiche la pop-up au milieu avec le fond transparent
+            popup.style.display = 'flex';
+            
+            // 2. On vide les champs du formulaire
+            document.getElementById('myContactForm').reset();
+            
+            // 3. On cache la pop-up automatiquement après 3 secondes (3000 ms)
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 3000);
+        } else {
+            alert("Une erreur est survenue lors de l'envoi.");
+        }
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+        alert("Impossible de joindre le serveur d'envoi.");
+    })
+    .finally(() => {
+        // On remet le bouton à son état initial
+        btn.disabled = false;
+        btn.innerText = "Envoyer";
+    });
+});
+</script>
+
+
         <!-- Footer-->
-        <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <!-- <div class="col-lg-4 mb-5 mb-lg-0"></div>
-                    -->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Location</h4>
-                        <p class="lead mb-0">
-                            77240 Vert Sainnt-Denis
-                      
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Sur les réseaux</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-whatsapp"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    <!--<div class="col-lg-4">
-                        
-                        </p>
-                    </div>
-                </div>
+<footer class="footer text-center">
+    <div class="container">
+        <!-- L'ajout de justify-content-around répartit les blocs équitablement -->
+        <div class="row justify-content-around">
+            
+            <!-- Section Location -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Location</h4>
+                <p class="lead mb-0">
+                    77240 Vert Sainnt-Denis
+                </p>
             </div>
-        </footer>
-        <!-- Copyright Section (Tout au fond) -->
-        <div class="copyright py-4 text-center text-white bg-dark">
-            <div class="container">
-                <small>Copyright &copy; Portfolio Niels Dagonnot 2026</small>
+            
+            <!-- Section Social Icons -->
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="text-uppercase mb-4">Sur les réseaux</h4>
+                <a class="btn btn-outline-light btn-social mx-1" href="#!" data-bs-toggle="modal" data-bs-target="#gmailModal">
+                    <i class="fab fa-fw fa-google"></i>
+                </a>
+              <!-- Fenêtre Pop-up Gmail -->
+<div class="modal fade" id="gmailModal" tabindex="-1" aria-labelledby="gmailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-light">
+            <div class="modal-header border-0">
+                <h5 class="modal-title m-auto" id="gmailModalLabel">Mon adresse gmail</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center pt-0 pb-4">
+                <p class="lead mb-0">nielsdagonnot@gmail.com</p>
             </div>
         </div>
+    </div>
+</div>
+
+                   <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/niels_dagonnot/" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-fw fa-instagram"></i>
+</a>
+
+                        
+                <a class="btn btn-outline-light btn-social mx-1" href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+  <i class="fab fa-fw fa-linkedin-in"></i>
+</a>
+                   <a class="btn btn-outline-light btn-social mx-1" href="#" data-bs-toggle="modal" data-bs-target="#whatsappModal">
+  <i class="fab fa-fw fa-whatsapp"></i>
+</a><!-- Fenêtre Pop-up WhatsApp -->
+<div class="modal fade" id="whatsappModal" tabindex="-1" aria-labelledby="whatsappModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-dark"> <!-- text-dark pour que le texte soit lisible si votre fond est clair -->
+      
+      <!-- En-tête (Head Title) -->
+      <div class="modal-header">
+        <h5 class="modal-title" id="whatsappModalLabel">
+          <i class="fab fa-whatsapp text-success me-2"></i> Mon numéro de téléphone
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <!-- Corps (Votre numéro) -->
+      <div class="modal-body text-center py-4">
+        <p class="mb-2 text-muted">Vous pouvez me contacter au :</p>
+        <h4 class="fw-bold">+33 7 83 07 01 68</h4>
+      </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+
+      
+    </div>
+  </div>
+</div>
+<body class="d-flex flex-column min-vh-100">
+<!-- Copyright Section -->
+<div id="myFooter" class="copyright py-4 text-center text-white bg-dark" style="position: fixed; bottom: 0; left: 0; width: 100%; z-index: 9999; opacity: 1; transition: opacity 0.3s;">
+    <div class="container">
+        <small>Copyright &copy; Portfolio Niels Dagonnot 2026</small>
+    </div>
+</div>
+<script>
+window.addEventListener('scroll', function() {
+    const footer = document.getElementById('myFooter');
+    
+    // Position actuelle du défilement
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    
+    // Hauteur totale maximale de défilement possible
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    
+    // Condition : On affiche si on est TOUT EN HAUT (scrollTop == 0) 
+    // OU si on est TOUT EN BAS (proche de maxScroll)
+    if (scrollTop === 0 || scrollTop >= maxScroll - 10) {
+        footer.style.opacity = '1';
+        footer.style.pointerEvents = 'auto'; // Rend le texte cliquable/sélectionnable
+    } else {
+        footer.style.opacity = '0';
+        footer.style.pointerEvents = 'none'; // Empêche de bloquer les clics sur le portfolio
+    }
+});
+</script>
+
+
+</body>
+
+
+
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
